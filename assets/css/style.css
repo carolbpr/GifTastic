@@ -80,16 +80,19 @@ h5{
 }
 .gif-info {
     text-align: center;
-    padding: 10px 20px;
+    
     position: relative;
-    float: left;
+    height: auto;
 }
-#gif-pic {    
-    width: 80%;
+.gif-pic {    
+    width: 100%;
     max-width: 1140px;
     margin: auto;  
     text-align: center; 
-    
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-auto-rows: auto;
 }
 
 .link{
@@ -175,23 +178,20 @@ img{
     width: 90%;
     height: auto;
     margin:15px;
+    display: block
 }
 p{
     margin-left: 20px;
 }
 .gif-box {
-    width: 25%;
+    width: 100%;
+    
     background-color: white;
-
-}
-.box{
-    width: 25%;
-    height: auto;
-    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display:flex;
-    flex-flow:column;
-    justify-content: flex-start;
-    margin: 15px;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    flex-flow: wrap;
+    flex-direction: flexbox;
+    overflow: hidden;
+    
 }
+
