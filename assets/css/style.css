@@ -78,22 +78,7 @@ h5{
 .nav-item{
     text-align: right;
 }
-.gif-info {
-    text-align: center;
-    
-    position: relative;
-    height: auto;
-}
-.gif-pic {    
-    width: 100%;
-    max-width: 1140px;
-    margin: auto;  
-    text-align: center; 
-    display: grid;
-    grid-gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
-    grid-auto-rows: auto;
-}
+
 
 .link{
    color:#777777;
@@ -182,16 +167,35 @@ img{
 }
 p{
     margin-left: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px #4aaaa5;
+}
+.gif-info {
+    text-align: center;
+    font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';;
+    position: relative;
+    height: auto;
+}
+.gif-pic {    
+    width: 100%;
+    max-width: 1140px;
+    margin: auto;  
+    text-align: center; 
+    display: grid;
+    flex-flow: wrap;
+    height: auto;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-template-rows: auto auto auto auto auto;
+    position: relative;
+    
 }
 .gif-box {
     width: 100%;
-    
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display:flex;
-    flex-flow: wrap;
-    flex-direction: flexbox;
+    display:inline-table;
     overflow: hidden;
-    
 }
+
 

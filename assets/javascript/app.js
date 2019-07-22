@@ -4,9 +4,12 @@ window.onload = function () {
     $(document).on("click", ".button", displayGifs);
     $("#newGifbutton").on("click", addNewGifbutton);
     $(document).on("click", 'img', imageClick);
-
+    $(window).on("scroll", scrollDown);
+    $(document).on("mouseover",'img',mousemoved);
 }
-defaultLoad = false;
+
+var i=0;
+defaultLoad = 1;
 var topics = ["Yes", "No", "Maybe", "Great Job", "Oh no"];
 function addNewbutton() {
     $("#new-button").empty();
@@ -18,17 +21,40 @@ function addNewbutton() {
         newButton.appendTo("#new-button");
     }
 };
-function displayGifs(value) {
-    value = $(this).attr("data-name");
+function displayGifs() {
+    if (defaultLoad == 1) {
+        value = "yes";
+        $(".gif-pic").empty();
+    }
+    else if (defaultLoad==2){
+        value = $(this).attr("data-name");
+        $(".gif-pic").empty();
+
+    }
+    else if(defaultLoad==3){
+        value = $(".gif-box").attr("data-name");
+    }
     event.preventDefault();
-    $(".gif-pic").empty();
+    defaultLoad = 2;
+    console.log(value);
     var apikey = "RwUKJ3DzRRWT64mYuwCnB9SaSYcsbAfo";
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=";
     $.ajax({
         url: queryURL + value + "&api_key=" + apikey,
         method: "GET"
     }).then(function (gifsSearch) {
-        var gifApiinfo = gifsSearch.data.slice(0, 10);
+        if ($(".gif-box").attr("data-name") !== value) {
+            $(".gif-pic").empty();
+            i=0;
+            var gifApiinfo = gifsSearch.data.slice(0, 10);
+            console.log(gifApiinfo)
+        }
+        else {
+            i=10
+            var gifApiinfo = gifsSearch.data.slice(i);
+            console.log(gifApiinfo);
+            i=25;
+        }
         gifApiinfo.forEach(element => {
             var newgif = ($('<img>').attr({
                 src: element.images['480w_still'].url
@@ -39,17 +65,15 @@ function displayGifs(value) {
                     imgClicked: false
                 }));
             var gifbox = $("<div/>").attr({ class: "gif-box" });
+            gifbox.attr("data-name", value);
             $(".gif-pic").append(gifbox);
             gifbox.append(newgif);
-
             var gifinfo = $("<div/>").attr({ class: "gif-info" });
             gifbox.append(gifinfo);
-            var rating = $("<p>").html("<b>Rating:</b> " + element.rating);
+            var rating = $("<p>").html("<b>Rating:</b> " + (element.rating));
             gifinfo.append(rating);
-
         });
     });
-
 }
 
 function addNewGifbutton() {
@@ -61,6 +85,10 @@ function addNewGifbutton() {
     }
 };
 
+function mousemoved(){
+    $(this).data("imgClicked", true);
+    $(this).attr("src", $(this).data("moving"));
+}
 function imageClick() {
     if ($(this).data("imgClicked")) {
         $(this).data("imgClicked", false);
@@ -70,3 +98,13 @@ function imageClick() {
         $(this).attr("src", $(this).data("moving"));
     }
 }
+
+function scrollDown() {
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + $(window).scrollTop();
+    if ((scrollHeight - scrollPosition) < 1 && i<10) {
+        defaultLoad=3;
+        displayGifs();
+        
+    }
+};
