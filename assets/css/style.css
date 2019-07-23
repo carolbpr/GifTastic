@@ -17,7 +17,7 @@
     
     }
     .container{
-        justify-content: center;
+        
         width: -webkit-fill-available;
         margin-left: 0px;
         margin-right: 0px;
@@ -57,23 +57,18 @@ a{
     
 }
 .container{
-    width: 80%;
-    max-width: -webkit-fill-available;
+    max-width:1140px;
     height: auto; 
     padding: 0;
     margin:20px;
+    display: flex;
+    flex: wrap;
+    
 }
 /* Style the header */
-h5{
-    color:white;
-    font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
-    margin-bottom:0;
-    margin-left: 0;
-    font-weight: bold;
-    padding: 5px 5px 5px 5px;
-}
 .navbar{
     background-color: #4aaaa5;
+    display: block;
 }
 .nav-item{
     text-align: right;
@@ -123,11 +118,10 @@ input{
     color:white;
     font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
     border: 2px solid #a5a4a4;
-    padding: 8px 30px;
-    font-size: 16px;
+    padding: 8px 10px;
+    font-size: 12px;
     margin-bottom: 20px;
     float: left;
-    font-weight: bolder;
     border-radius: 25px;
 }
 .button:hover{
@@ -146,15 +140,18 @@ footer{
     border-top-style: solid;
     border-top-color:#4aaaa5;
     border-width: 8px;
-    overflow: hidden;
     width: 100%;
     padding-top:20px;
     position: relative;
 }
-h6{
+h4{
+    font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
     color:white;
-    text-align: center;
-    margin-bottom: 0px;
+    font-size: 40px;
+}
+h6{
+    font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
+    color:white;
 }
 body{
     background-image: url(../images/email-pattern.png);
@@ -174,28 +171,23 @@ p{
     text-align: center;
     font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';;
     position: relative;
-    height: auto;
 }
 .gif-pic {    
     width: 100%;
     max-width: 1140px;
     margin: auto;  
-    text-align: center; 
-    display: grid;
-    flex-flow: wrap;
-    height: auto;
-    grid-gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
-    grid-template-rows: auto auto auto auto auto;
+    display:flex;
+    flex: wrap;
+    height: -webkit-fill-available;
     position: relative;
-    
-}
-.gif-box {
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display:inline-table;
     overflow: hidden;
 }
-
-
+.gif-box {
+    width: 25%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: left;
+    overflow: hidden;
+    position:absolute;
+    margin:10px;
+}

@@ -5,62 +5,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Caro Berry - GifTatic</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer-navbar/">
+
     <!--Linking Bootstrap-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer-navbar/">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
     <!-- Linking CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!--jQuery and Ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
 
     <!-- Load Masonry from https://masonry.desandro.com/ -->
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <!-- or -->
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-    
-    <script src="../masonry-docs/masonry.pkgd.js"></script>
-    <script src="../masonry-docs/masonry.pkgd.min.js"></script>
-    <script src="assets/javascript/app.js"></script>
+
+    <!-- Load imagesLoaded from https://imagesloaded.desandro.com/ -->
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+
 </head>
 
 <body>
     <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-ligth"
-        style="padding-bottom: 0px;padding-top: 0px;padding-left: 0px;padding-right: 0px;">
+    <nav class="navbar navbar-ligth navbar-ligth">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="padding-top: 0px;padding-bottom: 0px">
-                <h5 id="jumphere"><b>Caro Berry - GifTatic</b></h5>
-            </a>
-
-            <form class="navbar-form navbar-left" action="/action_page.php">
-                <div class="input-group">
-                    <input id="gif-input" type="text" class="form-control" placeholder="Search for a new Gif">
-
-                    <div class="input-group-btn">
-                        <button id="newGifbutton" class="btn btn-default" type="submit" style="margin-top:5px">
-                            <i class="glyphicon glyphicon-search" style="background-color: azure"></i>
-                        </button>
-                    </div>
+            <h4 id="jumphere">GifTatic</h4>
+            <a class="nav-link" href="https://carolbpr.github.io/Responsive-Portfolio/">Go back to Caro's
+                Portfolio</a>
+            <form class="form-inline my-2 my-lg-0">
+                <input type="text" class="form-control" id="gif-input" placeholder="Search for a new Gif">
+                <div class="input-group-btn">
+                    <button id="newGifbutton" class="btn btn-default" type="button">
+                        <i class="glyphicon glyphicon-search" style="background-color: azure"></i>
+                    </button>
                 </div>
             </form>
-            <ul class="navbar-nav ">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://carolbpr.github.io/Responsive-Portfolio/">Go back to Caro's
-                        Portfolio</a>
-                </li>
-            </ul>
         </div>
     </nav>
     <!--Body starts here-->
     <div class="container">
-        <div id="new-button"></div>
-    </div>
-    <div class="gif-pic">
+    <div id="new-button"></div>
 
-    </div>
-
+    <div class="gif-pic"></div>
+</div>
     <div class="jumpbox">
         <a href="#jumphere"> Back to the Top˄ </a>
     </div>
@@ -72,5 +65,6 @@
     </footer>
 </body>
 
+<script src="assets/javascript/app.js"></script>
 
 </html>
