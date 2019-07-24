@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    
+
     <!-- Linking CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
+
     <!--jQuery and Ajax-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
@@ -34,11 +34,9 @@
 <body>
     <!--Navigation Bar-->
     <nav class="navbar navbar-ligth navbar-ligth">
-        <div class="container-fluid">
-            <h4 id="jumphere">GifTatic</h4>
-            <a class="nav-link" href="https://carolbpr.github.io/Responsive-Portfolio/">Go back to Caro's
-                Portfolio</a>
-            <form class="form-inline my-2 my-lg-0">
+        <h4 id="jumphere">GifTatic</h4>
+        <div>
+            <form id="enterFunction" class="form-inline my-2 my-lg-0">
                 <input type="text" class="form-control" id="gif-input" placeholder="Search for a new Gif">
                 <div class="input-group-btn">
                     <button id="newGifbutton" class="btn btn-default" type="button">
@@ -46,14 +44,18 @@
                     </button>
                 </div>
             </form>
+            <a class="nav-link" href="https://carolbpr.github.io/Responsive-Portfolio/" style="float: left">Go back
+                to Caro's
+                Portfolio</a>
         </div>
     </nav>
     <!--Body starts here-->
     <div class="container">
-    <div id="new-button"></div>
-
-    <div class="gif-pic"></div>
-</div>
+        <div id="new-button"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="gif-pic"></div>
+    </div>
     <div class="jumpbox">
         <a href="#jumphere"> Back to the Top˄ </a>
     </div>

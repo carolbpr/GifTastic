@@ -1,27 +1,28 @@
-$(document).on("click", ".button", displayGifs);
 var i = 0;
 defaultLoad = 1;
 var topics = ["Yes", "No", "Maybe", "Great Job", "Oh no"];
-
+//Add a new button function
 function addNewbutton() {
     var gifInput = $("#gif-input").val().trim();
-    //console.log(topics);
     if (gifInput !== "" && $.inArray(gifInput, topics) === -1) {
         topics.push(gifInput);
     }
     $("#new-button").empty();
     for (var i = 0; i < topics.length; i++) {
-        var newButton = $('<div>');
+        var newButton = $("<div>");
         newButton.addClass("button");
         newButton.attr("data-name", topics[i]);
         newButton.text(topics[i]);
         newButton.appendTo("#new-button");
-};
+    };
 }
+//Calling the function to initial buttons
 addNewbutton();
-
-//Gifs Display
-function displayGifs() {
+//Adding a new button either with a click or a "enter"key
+$(document).on("click", "#newGifbutton", addNewbutton);
+$(document).on("submit", "#enterFunction", addNewbutton);
+//Gifs Display function
+function displayGifs(event) {
     if (defaultLoad == 1) {
         value = "yes";
         $(".gif-pic").empty();
@@ -42,6 +43,7 @@ function displayGifs() {
         url: queryURL + value + "&api_key=" + apikey,
         method: "GET"
     }).then(function (gifsSearch) {
+        console.log(gifsSearch);
         if ($(".gif-box").attr("data-name") !== value) {
             $(".gif-pic").empty();
             i = 0;
@@ -53,11 +55,11 @@ function displayGifs() {
             i = 25;
         }
         gifApiinfo.forEach(element => {
-            var newgif = ($('<img>').attr({
-                src: element.images['480w_still'].url
+            var newgif = ($("<img>").attr({
+                src: element.images["original_still"].url
             })
                 .data({
-                    still: element.images['480w_still'].url,
+                    still: element.images["original_still"].url,
                     moving: element.images.original.url,
                     imgClicked: false
                 }));
@@ -79,21 +81,24 @@ function displayGifs() {
         })
     });
 }
+//Calling function to display intial Gif for "yes"
 displayGifs();
-
-$(".gif-pic").masonry();
+//Displays new Gifs after clicking in the button of selection
+$(document).on("click", ".button", displayGifs);
 //Motion functions (Click, Scroll, Hover)
-$(document).on("mouseover", 'img', function () {
+//Move on mouseover
+$(document).on("mouseover", "img", function () {
     $(this).data("imgClicked", true);
     $(this).attr("src", $(this).data("moving"));
 });
-$(document).on("mouseout", 'img', function () {
+//Stop on mouseout
+$(document).on("mouseout", "img", function () {
     $(this).data("imgClicked", false);
     $(this).attr("src", $(this).data("still"));
 });
-$(document).on("click", 'img', function () {
+//Change state (moving or sitll) after click
+$(document).on("click", "img", function () {
     if ($(this).data("imgClicked")) {
-
         $(this).data("imgClicked", false);
         $(this).attr("src", $(this).data("still"));
     } else {
@@ -101,6 +106,7 @@ $(document).on("click", 'img', function () {
         $(this).attr("src", $(this).data("moving"));
     }
 });
+//Display 15 more gifs after scroll down
 $(window).on("scroll", function () {
     var scrollHeight = $(document).height();
     var scrollPosition = $(window).height() + $(window).scrollTop();
