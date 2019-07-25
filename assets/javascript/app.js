@@ -1,9 +1,9 @@
 var i = 0;
 defaultLoad = 1;
-var topics = ["Yes", "No", "Maybe", "Great Job", "Oh no"];
+var topics = ["YES", "NO", "MAYBE", "GREAT JOB!", "OH NO!"];
 //Add a new button function
 function addNewbutton() {
-    var gifInput = $("#gif-input").val().trim();
+    var gifInput = $("#gif-input").val().trim().toUpperCase();
     if (gifInput !== "" && $.inArray(gifInput, topics) === -1) {
         topics.push(gifInput);
     }
@@ -15,6 +15,7 @@ function addNewbutton() {
         newButton.text(topics[i]);
         newButton.appendTo("#new-button");
     };
+    return false;
 }
 //Calling the function to initial buttons
 addNewbutton();
