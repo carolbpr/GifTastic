@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Caro Berry - GifTatic</title>
+    <title>Caro Berry - GifTastic</title>
 
     <!--Linking Bootstrap-->
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer-navbar/">
@@ -31,10 +31,10 @@
 
 </head>
 
-<body>
+<body id="jumphere">
     <!--Navigation Bar-->
     <nav class="navbar navbar-ligth navbar-ligth">
-        <h4 id="jumphere">GifTatic</h4>
+        <h4 id="jumphere">GifTastic</h4>
         <div>
             <form id="enterFunction" class="form-inline my-2 my-lg-0">
                 <input type="text" class="form-control" id="gif-input" placeholder="Search for a new Gif">
@@ -55,14 +55,17 @@
     </div>
     <div class="container-fluid">
         <div class="gif-pic"></div>
+        <div id="popupInfo" class="modal">
+            <div id="InfoCaption"></div>
+        </div>
     </div>
     <div class="jumpbox">
         <a href="#jumphere"> Back to the Top˄ </a>
     </div>
+    
     <!--Footer starts here-->
     <footer class="footer mt-auto py-3">
         <span class="text-muted">
-            <h6>Copyright ®</h6>
         </span>
     </footer>
 </body>

@@ -77,8 +77,9 @@ a{
 }
 /* Style the header */
 .navbar{
-    background-color: #4aaaa5;
+    background-image: linear-gradient(teal,white);
     content: none;
+    border: 1px solid rgba(0,0,0,.9);
 }
 
 .link{
@@ -120,7 +121,7 @@ input{
   /*Styling the contact*/
 
 .button{
-    background-color: #4aaaa5; 
+    background-image: linear-gradient(white,teal); 
     color:white;
     font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
     border: 2px solid #a5a4a4;
@@ -175,13 +176,14 @@ p{
 }
 .gif-info {
     text-align: center;
-    font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';;
+    font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
     position: relative;
 }
 .gif-pic {    
     width: 100%;
     max-width: 1140px;
-    margin: auto;  
+    margin: auto;
+    margin-bottom:30px;
     display:flex;
     flex: wrap;
     height: -webkit-fill-available;
@@ -197,3 +199,27 @@ p{
     position:absolute;
     margin:10px;
 }
+.modal {
+    display: none; /* Hidden by default */
+     /* Stay in place */
+    z-index: 1; /* Sit on top */
+    width: auto; 
+    height:30px; 
+    background-color: rgba(0, 0, 0, 0); /* Black w/ opacity */
+    top : 74px;
+    }
+/* Modal Content (image) */
+
+  #InfoCaption {
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    text-emphasis: wrap;
+    font-family: 'Georgia', 'Times', 'Times New Roman', 'serif';
+    text-shadow: 2px 2px 5px grey;
+    background-image: linear-gradient(white,teal);
+    border: 1px solid rgba(0,0,0,.9);
+    
+    display: block;
+  }
