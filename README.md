@@ -7,3 +7,4 @@
 - When the user moves the mouse pointer over the image it will it will prompt the url path for the Gif
   image, and will disapper after 5secs, unless the user moves to another image.
 - The user can change the state of the images by clicking on it.
+- App is fully mobile responsive.
